@@ -19,6 +19,19 @@ var api = new ParseServer({
   serverURL: process.env.SERVER_URL || 'http://localhost:1337/parse',  // Don't forget to change to https if needed
   liveQuery: {
     classNames: ["Posts", "Comments"] // List of classes to support for query subscriptions
+  },
+    appName: 'Graduator',
+  publicServerURL: 'https://graduator.herokuapp.com/parse',
+  emailAdapter: {
+    module: 'parse-server-simple-mailgun-adapter',
+    options: {
+      // The address that your emails come from 
+      fromAddress: 'yourapp@yourappaddress.com',
+      // Your domain from mailgun.com 
+      domain: 'sandboxfdcb91dcc3c041248e3e4139fa4f92f8.mailgun.org',
+      // Your API key from mailgun.com 
+      apiKey: 'key-388e485a0117b4fb74d7566a5e2ad779',
+    }
   }
 });
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
