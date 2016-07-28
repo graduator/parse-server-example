@@ -37,6 +37,29 @@ var api = new ParseServer({
 // Client-keys like the javascript key or the .NET key are not necessary with parse-server
 // If you wish you require them, you can set them as options in the initialization above:
 // javascriptKey, restAPIKey, dotNetKey, clientKey
+var server = ParseServer({
+  ...otherOptions,
+  // Enable email verification
+  verifyUserEmails: true,
+  // The public URL of your app.
+  // This will appear in the link that is used to verify email addresses and reset passwords.
+  // Set the mount path as it is in serverURL
+  publicServerURL: 'https://graduator.herokuapp.com/parse',
+  // Your apps name. This will appear in the subject and body of the emails that are sent.
+  appName: 'Graduator',
+  // The email adapter
+  emailAdapter: {
+    module: 'parse-server-simple-mailgun-adapter',
+    options: {
+      // The address that your emails come from
+      fromAddress: 'parse@example.com',
+      // Your domain from mailgun.com
+      domain: 'sandboxfdcb91dcc3c041248e3e4139fa4f92f8.mailgun.org',
+      // Your API key from mailgun.com
+      apiKey: 'key-388e485a0117b4fb74d7566a5e2ad779',
+    }
+  }
+});
 
 var app = express();
 
