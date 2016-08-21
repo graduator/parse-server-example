@@ -26,11 +26,11 @@ var api = new ParseServer({
     module: 'parse-server-simple-mailgun-adapter',
     options: {
       // The address that your emails come from 
-      fromAddress: 'contact@graduator.co.uk',
+      fromAddress: 'verify@graduator.uk',
       // Your domain from mailgun.com 
-      domain: 'app4234e6a5ee2d4b0b8cc301b4463e2da6.mailgun.org',
+      domain: 'mg.graduator.uk',
       // Your API key from mailgun.com 
-      apiKey: 'key-000e33d6dbd1b291a49f1543cb0461c2',
+      apiKey: 'key-388e485a0117b4fb74d7566a5e2ad779',
     }
   }
 });
